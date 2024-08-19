@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Shortcuts</h1>
+
+<div id="shortcuts">
+  <% @shortcuts.each do |shortcut| %>
+    <%= render shortcut %>
+    <p>
+      <%= link_to "Show this shortcut", shortcut %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New shortcut", new_shortcut_path %>

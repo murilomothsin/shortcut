@@ -1,0 +1,22 @@
+<%= form_with(model: shortcut) do |form| %>
+  <% if shortcut.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(shortcut.errors.count, "error") %> prohibited this shortcut from being saved:</h2>
+
+      <ul>
+        <% shortcut.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :full_url, style: "display: block" %>
+    <%= form.text_field :full_url %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
